@@ -62,8 +62,8 @@ def telemetry(sid, data):
         image = Image.open(BytesIO(base64.b64decode(imgString)))
         image_array = np.asarray(image)
 
-        image_array = (image_array - 128.) / 128.   #KUMAR
-        image_array = image_array[50:140,:,:]       #KUMAR
+        #image_array = (image_array - 128.) / 128.   #KUMAR
+        #image_array = image_array[50:140,:,:]       #KUMAR
 
         steering_angle = float(model.predict(image_array[None, :, :, :], batch_size=1))
 
